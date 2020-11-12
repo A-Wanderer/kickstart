@@ -37,17 +37,18 @@ template <class T> inline void checkMax(T& a, T b) { if (b > a) a = b; }
 ///////////////////////////////////////////////////////////////////////////////////////
 
 // 求逆, 快速幂, 组合数, 模内四则运算, 级数
-// const int MOD = 1000000007;
-// LL inv(LL a) { return a == 1 ? 1 : (MOD - MOD / a) * inv(MOD % a) % MOD; }
-// LL mPow(LL x, int n) { LL ret = 1; while (n) { if (n & 1) ret = ret * x % MOD; x = x * x % MOD; n >>= 1; } return ret; }
-// LL mC(int n, int m) { LL ret = 1; for(int i = 1; i <= m; i++, n--) { ret = ret * n % MOD * inv(i) % MOD; } return ret; }
-// LL add(LL a, LL b) { return (a+b)%MOD; }
-// LL minus(LL a, LL b) { return (a+MOD-b)%MOD; }
-// LL times(LL a, LL b) { return a*b%MOD; }
-// LL divide(LL a, LL b) { return a*inv(b)%MOD; }
-// LL uni_sum(LL n) { return n*(n+1)/2%MOD; } // 1 + 2 + ... + n
-// LL square_sum2(LL n) { return n*(n+1)%MOD*(2*n+1)%MOD*inv(6)%MOD; } // 1^2 + 2^2 + ... + n^2
-// LL cube_sum3(LL n) { return n*n%MOD*(n+1)%MOD*(n+1)%MOD*inv(4)%MOD; } // 1^3 + 2^3 + ... + n^3
+const int MOD = 1000000007;
+LL inv(LL a) { return a == 1 ? 1 : (MOD - MOD / a) * inv(MOD % a) % MOD; }
+LL mPow(LL x, int n) { LL ret = 1; while (n) { if (n & 1) ret = ret * x % MOD; x = x * x % MOD; n >>= 1; } return ret; }
+LL mC(int n, int m) { LL ret = 1; for(int i = 1; i <= m; i++, n--) { ret = ret * n % MOD * inv(i) % MOD; } return ret; }
+LL add(LL a, LL b) { return (a+b)%MOD; }
+LL minus(LL a, LL b) { return (a+MOD-b)%MOD; }
+LL times(LL a, LL b) { return a*b%MOD; }
+LL divide(LL a, LL b) { return a*inv(b)%MOD; }
+LL uni_sum(LL n) { return n*(n+1)/2%MOD; } // 1 + 2 + ... + n
+LL square_sum2(LL n) { return n*(n+1)%MOD*(2*n+1)%MOD*inv(6)%MOD; } // 1^2 + 2^2 + ... + n^2
+LL cube_sum3(LL n) { return n*n%MOD*(n+1)%MOD*(n+1)%MOD*inv(4)%MOD; } // 1^3 + 2^3 + ... + n^3
+vector<LL>son_set(LL s) { vector<LL> res; for (LL x = S; x; x = (x - 1) & S)res.pop_back(x); return res;
 
 // 东南西北四个方向
 // const int dx[] = {0, 1, 0, -1};
@@ -71,6 +72,7 @@ template <class T> inline void checkMax(T& a, T b) { if (b > a) a = b; }
 // }
 
 ///////////////////////////////////////////////////////////////////////////////////////
+
 
 
 int main(int argc, char *argv[]) {

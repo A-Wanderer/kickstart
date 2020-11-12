@@ -43,6 +43,8 @@ def arg_parse():
 
 
 def main(flags, pro_id):
+    print(type(flags))
+    a = input()
     if flags.clear:
         # 删除源代码
         src_folder = 'src/'
@@ -83,7 +85,7 @@ def main(flags, pro_id):
 
     if flags.run and pro_id != 'X':
         # os.system("reset")
-        print "=" * 8, "run {0}...".format(pro_id), "=" * 8
+        print ("=" * 8, "run {0}...".format(pro_id), "=" * 8)
 
         # 确定跑python还是.cpp
         # if "p" in flags.run:
@@ -120,7 +122,7 @@ def main(flags, pro_id):
                 # print run_command.format(real_x)
                 os.system(run_command.format(real_x))
         
-        print "=" * 6, "end run {0}...".format(pro_id), "=" * 6
+        print ("=" * 6, "end run {0}...".format(pro_id), "=" * 6)
 
     if flags.python and pro_id != 'X':
         if os.path.exists('src/' + pro_id + '.py'):
